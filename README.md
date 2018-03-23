@@ -6,6 +6,7 @@ A template for running Drupal 8 in docker.
 * Ubuntu 16.04
 * Docker
 * Docker Compose
+* Composer
 
 ## Installation
 
@@ -21,6 +22,12 @@ Next we will install Drupal using composer. It is not possible to create a new p
 
 ```
 composer create-project drupal-composer/drupal-project:8.x-dev drupal --stability dev --no-interaction && cp -r drupal/. . && rm -rf drupal && mkdir -p config/sync && chmod 777 config/sync && mkdir -p web/sites/default && chmod -R 777 web/sites/default
+```
+
+and then you can start docker
+
+```
+docker-compose up
 ```
 
 Open `http://localhost/` in your browser and you should see the Drupal installer. Follow the steps through until you reach 'Set up database', use the settings below:
