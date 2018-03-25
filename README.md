@@ -44,3 +44,11 @@ Host: mysql
 ```
 
 And then complete the installation!
+
+## drush
+
+There is a helper script to run drush. It needs to be run inside the docker container because it requires acces to the mysql cli:
+
+```
+./docker/bin/drush
+```
