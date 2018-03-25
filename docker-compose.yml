@@ -4,8 +4,8 @@ services:
 
   web:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./docker
+      dockerfile: ./Dockerfile
     container_name: web
     volumes:
       - .:/var/www/html
