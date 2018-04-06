@@ -1,0 +1,8 @@
+#!/bin/bash
+
+uid=`id -u`
+gid=`id -g`
+
+args="$@"
+
+docker exec -it --user=$uid:$gid web bash -c "cd /var/www/html; php ./vendor/bin/drupal $args"

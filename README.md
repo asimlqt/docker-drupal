@@ -1,6 +1,6 @@
 # docker-drupal
 
-A template for running Drupal 8 in docker.
+A template for running Drupal 8 in docker. It also comes with drush and drupal console pre-installed
 
 The following setup has been tested on Ubuntu 16.04 so if you have a different setup then adjust the commands to your needs.
 
@@ -25,12 +25,14 @@ git clone git@github.com:asimlqt/docker-drupal.git \
     && mkdir -p config/sync \
     && chmod 777 config/sync \
     && mkdir -p web/sites/default \
-    && chmod -R 777 web/sites/default
+    && chmod -R 777 web/sites/default \
+    && composer require drupal/console:~1.0
 ```
 
 The above command will install all required dependencies. Once that has completed you can start docker:
 
 ```
+docker-compose build
 docker-compose up
 ```
 
@@ -51,4 +53,12 @@ There is a helper script to run drush. It needs to be run inside the docker cont
 
 ```
 ./docker/bin/drush
+```
+
+## drupal console
+
+There is also a helper script to run drupal console similar to drush:
+
+```
+./docker/bin/drupal
 ```
